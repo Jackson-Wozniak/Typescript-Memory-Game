@@ -1,0 +1,112 @@
+body {
+    padding : 0;
+    margin : 0;
+}
+
+.container {
+    width : 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: rgba(17, 24, 39, 1);
+}
+
+.animation {
+    position: relative;
+    display: flex;
+    height : 100%;
+    width : 100%;
+}
+
+.animation span {
+    position: relative;
+    width : 10px;
+    height : 10px;
+    background : rgb(44, 44, 252);
+    margin: 0 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgb(34, 34, 150), 0 0 10px #4a6ddf, 0 0 20px skyblue;
+    animation : animate 15s linear infinite;
+    animation-duration: calc(500s / var(--i));
+}
+
+.animation span:nth-child(even){
+    background : #42c719;
+    box-shadow: 0 0 0 5px #17a83244, 0 0 10px #6cdd34, 0 0 20px #2bd52b;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(0vh) scale(1);
+    }
+}
+
+
+.game-container {
+    position: absolute;
+    left : 50%;
+    top : 50%;
+    transform: translate(-50%, -55%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color : #FFF;
+}
+
+#buttons-div {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap : 10px;
+}
+
+button {
+    position: relative;
+    height : 9vh;
+    width : 9vh;
+    border-radius : 5px;
+    box-shadow: 0 0 1px 1px #374151;
+    border : none;
+    background-color :#182432;
+}
+
+@media only screen and (max-width: 500px){
+    button {
+        position: relative;
+        height : 50px;
+        width : 50px;
+        border-radius : 5px;
+        box-shadow: 0 0 1px 1px #374151;
+        border : none;
+        background-color :#182432;
+    }
+}
+
+.color-button {
+    background-color: blue;
+}
+
+.correct-button {
+    background-color: rgba(59, 209, 111);
+}
+
+.incorrect-button {
+    background-color: crimson;
+}
+
+h1 {
+    font-family: 'Century Gothic',sans-serif;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-family: 'Century Gothic',sans-serif;
+    font-size: 1.5rem;
+}
